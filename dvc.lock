@@ -36,19 +36,19 @@ stages:
       size: 786560
     - path: outputs/model.onnx
       hash: md5
-      md5: 7ae4ea998a3a618dabbaa4d555d6cd51
+      md5: d27ba35b20a1385e8fabede6ccd3a1ef
       size: 7903126
     - path: outputs/out.npy
       hash: md5
       md5: e73cfbfc6feee336899930224c5f074e
       size: 786560
   build:
-    cmd: bash run.sh '$FINN/run-docker.sh build_custom $(pwd)'
+    cmd: bash run.sh 'finn run -d .finn build.py'
     deps:
     - path: build.py
       hash: md5
-      md5: b10586b20cb94662b318bff0431d74c7
-      size: 6905
+      md5: 5e53e88d540af3f764ef963c8115a4fb
+      size: 6900
     - path: build_steps.py
       hash: md5
       md5: 4025dcf779731c43d34e314aa9f3431f
@@ -67,7 +67,7 @@ stages:
       size: 786560
     - path: outputs/model.onnx
       hash: md5
-      md5: 7ae4ea998a3a618dabbaa4d555d6cd51
+      md5: d27ba35b20a1385e8fabede6ccd3a1ef
       size: 7903126
     - path: outputs/out.npy
       hash: md5
@@ -136,9 +136,9 @@ stages:
     outs:
     - path: outputs/build/
       hash: md5
-      md5: 11007c7708cee830bd8a2a350790e158.dir
-      size: 931089705
-      nfiles: 2258
+      md5: e23788a7f054f868afd7bd0f9ed9eb1f.dir
+      size: 932397071
+      nfiles: 2296
   metrics:
     cmd: python -m metrics
     deps:
@@ -148,13 +148,13 @@ stages:
       size: 932
     - path: outputs/build/
       hash: md5
-      md5: 11007c7708cee830bd8a2a350790e158.dir
-      size: 931089705
-      nfiles: 2258
+      md5: e23788a7f054f868afd7bd0f9ed9eb1f.dir
+      size: 932397071
+      nfiles: 2296
     - path: outputs/build/report/post_synth_resources.json
       hash: md5
-      md5: 4787083fe1a1bad9c11bb7bb6e9b2337
-      size: 28503
+      md5: d6ccf9164b2ee63f3ae72f786e3480ba
+      size: 28510
     params:
       params.yaml:
         build.output_dir: outputs/build
@@ -164,7 +164,7 @@ stages:
     outs:
     - path: metrics.yaml
       hash: md5
-      md5: 4e59ad2eb18dc7ccce54bd9c8725e493
+      md5: dfb82c311fd7628a23bd1a8c5b7cef3f
       size: 80
   folding:
     cmd: python -m make_folding

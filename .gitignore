@@ -9,4 +9,7 @@ __pycache__
 /inp.npy
 /out.npy
 /build
-
+# FINN dependencies
+.finn/
+# FINN temporaries
+FINN_TMP/
